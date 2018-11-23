@@ -1,0 +1,66 @@
+----------------------------------------------------------------------------------------------
+--                                   USE GLOBAL PATH                                        --
+----------------------------------------------------------------------------------------------
+
+
+
+Use a global path:
+ghci -i (path)
+
+
+
+----------------------------------------------------------------------------------------------
+--                                       MODULE FILE                                        --
+----------------------------------------------------------------------------------------------
+
+module ModuleName ( Identifier1
+                  , Identifier2
+                  , ...
+                  , Identifiern
+                  ) where
+
+-- All "public" methods must be put as an identifer
+-- If not put in identifiers then → "private"
+
+
+Imports
+
+DataTypes,
+Functions,
+Classes and Instances Definitions,
+
+----------------------------------------------------------------------------------------------
+--                                  MODULE IMPORTS                                          --
+----------------------------------------------------------------------------------------------
+
+
+-- To import a module:
+
+-- All identifiers are imported
+import ModuleName 
+
+-- Only the identifiers selected will be imported
+import ModuleName(Identifier1, Identifier2, ..., Identifiern) 
+
+-- In order to avoid conflicts (same as python)
+import qualified ModuleName(Identifier1, ..., Identifiern) as Prefix
+
+{-
+import qualified DataStructures.Stack.LinearStack as S
+import qualified DataStructures.Queue.LinearQueue as Q
+
+s1 :: S.Stack Int
+s1 = S.empty
+
+q1 :: Q.Queue Int
+q1 = Q.empty
+-}
+
+
+DataStructures
+    Stack
+        imp1
+        imp2
+    Queues
+        imp1
+    ...
