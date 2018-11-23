@@ -4,7 +4,7 @@
   Functional Programming
 </h1>
 
-Welcome to my github repo!
+Welcome to my github repo! <br>
 Here I am posting my notes and exercises I am doing in order to learn functional programming.
 <br>
 I want to thank [@nathanielrsuchy](https://twitter.com/nathanielrsuchy) and [@devonrevenge](https://twitter.com/devonrevenge) for introducing me into functional programming.
