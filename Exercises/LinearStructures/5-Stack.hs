@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
--- 5. [TODO] Use a Stack for checking if chars are balanced           --
+-- 5. [DONE] Use a Stack for checking if chars are balanced           --
 ------------------------------------------------------------------------
 
 {-
@@ -51,16 +51,24 @@ pop (Node x s) = s
 
 
 checkString :: [Char] -> Bool
-checkString (x:xs) = if "final string" then "check if Emtpy" else check a (x:xs)
+checkString "" = True
+checkString (x:xs) = check (x:xs) Empty  
     where 
-    check _ (x:xs) 
-      | x == "(" = check (push x) xs 
-      | x == "[" = check (push x) xs
-      | x == "{" = check (push x) xs
-      | x == ")" = if (Maybe top (x:xs)) == "(" then True else False
-      | x == "]" = if (Maybe top (x:xs)) == "[" then True else False
-      | x == "}" = if (Maybe top (x:xs)) == "}" then True else False
-      | otherwise= check xs
+      check :: [Char] -> Stack Char -> Bool
+      check [s] sc = True
+      check (x:xs) sc
+        | (elem x "([{") && xs == []                      = False
+        | elem x "([{"                                    = check xs (push x sc) 
+        | (elem x ")]}") && (top sc) == (inversechar x)   = check xs (pop sc)
+        | elem x ")]}"                                    = False
+        | otherwise                                       = check xs sc
+      inversechar ']' = '['
+      inversechar ')' = '('
+      inversechar '}' = '}'
+
+
+
+
 
 
 
