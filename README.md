@@ -20,7 +20,7 @@ Table of Contents
  <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/Notes">Notes:</a></b> Personal notes about several topics (recursion, libraries/modules, datastructures...)</li>
  <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/Exercises">Exercises:</a></b> Starting with simple exercises and implementing simple datastructures</li>
   <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/LittleParserImplementation">Parser:</a></b> Little parser idea I got in order to practice a bit.</li>
-    <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/LinearStructures">Parser:</a></b> Linear Data Structures in Haskell</li>
+    <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/LinearStructures">Linear Data Structures:</a></b> Linear Data Structures in Haskell</li>
   
   
   
