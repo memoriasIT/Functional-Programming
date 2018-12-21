@@ -1,0 +1,3 @@
+-- Get root element
+-- Get children
+-- For each children add to list
