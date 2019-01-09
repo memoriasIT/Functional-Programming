@@ -101,10 +101,17 @@ simplify lt rt  = (Node lt rt)
 
 get :: Int -> Vector a -> a
 get n (V s t)
-    | n < 0 || n > s = error "Out of Bounds exception"
-    | isUnif t       = value t
-    | n <= (div s 2) = get n (V (div s 2) (left t))
-    | otherwise      = get (n-(div s 2)) ((V (div s 2) (right t)))
+    | n < 0 || n >= s = error "Out of Bounds exception"
+    | otherwise       = aux n s t
+    where
+        aux n s (Unif x) = x
+        aux n s (Node lt rt)
+            | n < s2    = aux n s2 lt
+            | otherwise = aux (n-s2) s2 rt
+
+| isUnif t        = value t
+    | n <= (div s 2)  = get n (V (div s 2) (left t))
+    | otherwise       = get (n-(div s 2)) ((V (div s 2) (right t)))
 
 -- Check if it's unif
 isUnif :: Tree a -> Bool
@@ -162,10 +169,11 @@ cambia n s x (Node lt rt)
 -------------------------------------------------------------------------------
 -- | Map Vector.
 
---mapVector = undefined
-mapVector :: (a -> a) -> Vector a -> Vector a
-mapVector f (V x (Unif y))     = V (f x) (Unif (f y))
-mapVector f (V x (Node lt rt)) = V (f x) (Node (f lt) (f rt))
+mapTree :: (a -> b) -> Tree a -> Tree b
+mapTree f (Unif x)     = Unif (f x)
+mapTree f (Node lt rt) = Node (mapTree f lt) (mapTree f rt)
+
+mapVector (V n t) = V n (mapTree f t)
 
 -------------------------------------------------------------------------------
 -- | Filter Vector.
