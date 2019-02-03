@@ -22,6 +22,10 @@ Table of Contents
   <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/LittleParserImplementation">Parser:</a></b> Little parser idea I got in order to practice a bit.</li>
     <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/LinearStructures">Linear Data Structures:</a></b> Linear Data Structures in Haskell</li>
       <li><b><a href="https://github.com/memoriasIT/Functional-Programming/tree/master/Trees">Trees:</a></b> Trees in Haskell</li>
+  <li><b><a href="https://github.com/memoriasIT/DataStructures">Data Structures:</a></b> More dataStructures can be found here</li>
+  
+  
+
 
   
   
